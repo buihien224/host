@@ -28,7 +28,7 @@ then
     for dir in */; do
     ( cd "$dir" && zip -r ../"$codename"_flashable.zip . )
     done
-    rm tmp
+    rm -r tmp
     echo -e "\e[1;31mDone Flash "$codename"_flashable.zip\e[0m"
     echo -e "\e[1;31mIn Custom Recovery\e[0m"
     
