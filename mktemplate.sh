@@ -1,5 +1,5 @@
 codename=$(getprop ro.product.device)
-bhlnk="https://github.com/buihien224/host/blob/main/dynamic1.zip?raw=true"
+bhlnk="https://github.com/buihien224/host/raw/main/dynamic1.zip"
 scpt="META-INF/com/google/android/updater-script"
 #####
 pkg install -y zip
