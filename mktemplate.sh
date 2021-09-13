@@ -16,9 +16,9 @@ if [[ -f "system.img" ]]
 then
     echo -e "\e[1;31mGenerating..........\e[0m"
     systemsize=$(find "system.img" -printf "%s")
-    curl -o tmp.zip $bhlnk 
-    unzip tmp.zip 
-    rm tmp.zip
+    wget $bhlnk 
+    unzip dynamic1.zip
+    rm dynamic1.zip
     echo -e "\e[1;31mCoping system.img...\e[0m"
     cp system.img tmp
     cd tmp
