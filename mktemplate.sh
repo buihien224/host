@@ -1,4 +1,4 @@
-codename=$(getprop ro.product.device)
+codename=$(getprop ro.product.vendor.device)
 bhlnk="https://github.com/buihien224/host/raw/main/dynamic1.zip"
 scpt="tmp/META-INF/com/google/android/updater-script"
 #####
