@@ -18,9 +18,21 @@ if [[ -f "system.img" ]]
 then
     echo -e "\e[1;33mGenerating..........\e[0m"
     systemsize=$(find "system.img" -printf "%s")
-    wget -q $bhlnk 
-    unzip dynamic1.zip
-    rm dynamic1.zip
+    echo "check if the template exists"
+    if [[ -f "dynamic1.zip" ]]
+    then
+      echo "extracting template"
+      unzip dynamic1.zip
+    else
+      echo "downloading template"
+      wget -q $bhlnk 
+         if [[ -f "dynamic1.zip" ]]
+         then
+           unzip dynamic1.zip
+         else echo "report to @bhlnk"
+         exit 1
+         fi
+     fi
     echo -e "\e[1;33mCoping system.img...\e[0m"
     cp system.img tmp
     sed -i "s/test/$codename/g" $scpt 
