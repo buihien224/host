@@ -7,6 +7,8 @@ user=$(whoami)
 cd ~/
 cd "$user"
 pwd=$(pwd)
+echo "Working dir : "$pwd""
+echo ""
 echo -e "\e[1;33mGenerate GSI Flashing Template @bhlnk \e[0m"
 sleep 0.5
 echo -e "\e[1;33mFor Dynamic Partition Device \e[0m"
@@ -41,9 +43,8 @@ then
     sed -i "s/160600/$systemsize/g" tmp/dynamic_partitions_op_list
     echo -e "\e[1;33mDONE........\e[0m"
     for dir in tmp; do
-    ( cd "$dir" && zip -r ../"$codename"_flashable_"$rd".zip . )
+    ( cd "$dir" && zip -r ../"$gsi"_"$codename".zip . )
     done
-    rm -r tmp
     echo -e "\e[1;32mDone Flash "$gsi"_"$codename".zip\e[0m"
     echo -e "\e[1;32mIn Custom Recovery\e[0m"
     
