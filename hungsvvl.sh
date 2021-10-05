@@ -3,7 +3,9 @@ bhlnk="https://github.com/buihien224/host/raw/main/dynamic1.zip"
 scpt="tmp/META-INF/com/google/android/updater-script"
 
 #####
+user=$(whoami)
 cd ~/
+cd "$user"
 pwd=$(pwd)
 echo -e "\e[1;33mGenerate GSI Flashing Template @bhlnk \e[0m"
 sleep 0.5
@@ -48,7 +50,7 @@ then
 else 
 echo
 echo -e "\e[1;31mCopy system.img to\e[0m"
-echo -e "\e[1;31mHome\e[0m"
+echo -e "\e[1;31m home/"$user"\e[0m"
 echo -e "\e[1;31mThen run this script again\e[0m"
 fi
 
