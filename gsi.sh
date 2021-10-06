@@ -5,7 +5,6 @@ scpt="tmp/META-INF/com/google/android/updater-script"
 #####
 user=$(whoami)
 cd ~/
-cd "$user"
 pwd=$(pwd)
 echo "Working dir : "$pwd""
 echo ""
