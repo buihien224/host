@@ -27,16 +27,16 @@ sleep 0.5
 ######
 check ()
 {
-    if [[ -f "dynamic1.zip" ]]
+    if [[ -f "picasso.zip" ]]
     then
       echo "extracting template"
-      unzip dynamic1.zip
+      unzip picasso.zip
     else
       echo "downloading template"
       wget -q $bhlnk 
-         if [[ -f "dynamic1.zip" ]]
+         if [[ -f "picasso.zip" ]]
          then
-           unzip dynamic1.zip
+           unzip picasso.zip
          else echo "report to @bhlnk"
          exit 1
          fi
