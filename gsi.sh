@@ -101,5 +101,5 @@ then
    then mkvendor
    else mksys
    fi
-else echo "No image found"
+else echo "No image found" fi
 #####
