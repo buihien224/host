@@ -44,18 +44,6 @@ check ()
      fi
 }
 
-comp ()
-{
-   echo "checking file"
-   if [[ -f "system.img" ]]
-   then mod=1
-    else 
-       echo " No image found" 
-       exit 1
-    fi
-
-}
-
 mksys()
 {
     rm tmp/vendor_op_list
@@ -107,7 +95,11 @@ package_extract_file("vendor.img", map_partition("vendor"));" >> $scpt
 
 }
 check
-comp
-mksys
-
+if [[ -f "system.img" ]]
+then
+   if [[ -f "vendor.img" ]]
+   then mkvendor
+   else mksys
+   fi
+else echo "No image found"
 #####
