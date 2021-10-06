@@ -46,6 +46,7 @@ check ()
 
 comp ()
 {
+   echo "checking file"
    if [[ -f "system.img" ]]
    then 
       if [[ -f "vendor.img" ]]
