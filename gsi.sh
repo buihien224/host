@@ -108,19 +108,6 @@ package_extract_file("vendor.img", map_partition("vendor"));" >> $scpt
 }
 check
 comp
-if ( mod==0)
-then
-    echo ""
-    echo -e "\e[1;31mCopy system.img to\e[0m"
-    echo -e "\e[1;31m "$pwd"\e[0m"
-    echo -e "\e[1;31mThen run this script again\e[0m"
-    sleep 2
-    exit 1
-else 
-    if (mod!=2)
-    then mksys
-    else mkvendor
-    fi
-fi
+mksys
 
 #####
