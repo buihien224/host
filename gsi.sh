@@ -8,7 +8,7 @@ mod=0
 #####
 cd ~/
 if [[ -d "output_picasso" ]]
-then cd output_picasso
+echo "mk output folder"
 else
 mkdir output_picasso
 fi
