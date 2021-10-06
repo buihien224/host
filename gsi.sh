@@ -68,7 +68,6 @@ mksys()
 
 mkvendor()
 {
-    rm tmp/vendor_op_list
     echo -e "\e[1;33mGenerating system and vendor flashable\e[0m"
     systemsize=$(find "system.img" -printf "%s")
     vendorsize=$(find "vendor.img" -printf "%s")
