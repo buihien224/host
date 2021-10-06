@@ -50,7 +50,7 @@ then
 else 
 echo
 echo -e "\e[1;31mCopy system.img to\e[0m"
-echo -e "\e[1;31m home/"$user"\e[0m"
+echo -e "\e[1;31m "$pwd"\e[0m"
 echo -e "\e[1;31mThen run this script again\e[0m"
 fi
 
