@@ -11,8 +11,8 @@ if [[ -d "output_picasso" ]]
 then cd output_picasso
 else
 mkdir output_picasso
-cd output_picasso
 fi
+rm -r tmp
 pwd=$(pwd)
 echo "Working dir : "$pwd""
 echo ""
@@ -72,6 +72,7 @@ mksys()
     for dir in tmp; do
     ( cd "$dir" && zip -r ../"$gsi"_"$codename".zip . )
     done
+    mv "$gsi"_"$codename".zip output_picasso
     rm -r tmp
     echo -e "\e[1;32mDone Flash "$gsi"_"$codename".zip\e[0m"
     echo -e "\e[1;32mIn Custom Recovery\e[0m"
@@ -99,6 +100,7 @@ package_extract_file("vendor.img", map_partition("vendor"));" >> $scpt
     for dir in tmp; do
     ( cd "$dir" && zip -r ../"$gsi"_"$codename".zip . )
     done
+    mv "$gsi"_"$codename".zip output_picasso
     rm -r tmp
     echo -e "\e[1;32mDone Flash "$gsi"_"$codename".zip\e[0m"
     echo -e "\e[1;32mIn Custom Recovery\e[0m"
