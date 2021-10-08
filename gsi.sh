@@ -6,7 +6,7 @@ scpt="tmp/META-INF/com/google/android/updater-script"
 user=$(whoami)
 mod=0
 #####
-cd ~/
+
 if [[ -d "output_picasso" ]]
 then
 echo "mk output folder"
