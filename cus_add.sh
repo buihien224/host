@@ -21,12 +21,9 @@ haa=$(find $1)
 }
 if [[ -f addon.img ]] ; then 
 	sudo rm addon.img
-	echo "Download addon.img"
-	wget https://github.com/buihien224/host/raw/main/addon.img
-else
-	echo "Download addon.img"
-	wget https://github.com/buihien224/host/raw/main/addon.img
 fi
+	echo "Download addon.img"
+	wget -q https://github.com/buihien224/host/raw/main/addon.img
 
 linkcute=$(ls *.zip)
 if [[ -f $linkcute ]]; then
