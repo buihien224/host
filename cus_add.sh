@@ -30,6 +30,7 @@ if [[ -f $linkcute ]]; then
 	echo "Phat hien $linkcute"
 	mkdir working custom
 	dd if=/dev/zero bs=1M count=512 >> addon.img
+	e2fsck -y -f addon.img > /dev/null 2>&1
 	sudo mount addon.img working
 	echo "Giai nen $linkcute"
 	cp $linkcute custom ; cd custom
