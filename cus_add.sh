@@ -23,7 +23,7 @@ if [[ -f addon.img ]] ; then
 	sudo rm addon.img
 fi
 	echo "Download addon.img"
-	wget -q https://github.com/buihien224/host/releases/download/untagged-4f0d4cbb9220bf42b236/addon.img
+	wget -q https://github.com/buihien224/host/releases/download/tes/addon.img
 
 linkcute=$(ls *.zip)
 if [[ -f $linkcute ]]; then
@@ -39,6 +39,7 @@ if [[ -f $linkcute ]]; then
 	echo "Set quyen va SEcontest"
 	permis working
 	sudo umount working
+	resize2fs -f -M addon.img
 	rm -rf working custom
 	echo "Xong, hay copy file addon.img vao module/update"
 fi
