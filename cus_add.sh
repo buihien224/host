@@ -21,18 +21,18 @@ haa=$(find $1)
 }
 if [[ ! -f addon.img ]] ; then 
 	echo "Download addon.img"
-	wget https://github.com/buihien224/host/raw/main/addon.img
+	sudo wget https://github.com/buihien224/host/raw/main/addon.img
 fi
 
 linkcute=$(ls *.zip)
 if [[ -f $linkcute ]]; then
 	echo "Phat hien $linkcute"
-	mkdir working custom
-	dd if=/dev/zero bs=1M count=256 >> addon.img
+	sudo mkdir working custom
+	sudo dd if=/dev/zero bs=1M count=256 >> addon.img
 	sudo mount addon.img working
 	echo "Giai nen $linkcute"
 	cp $linkcute custom ; cd custom
-	jar xf $linkcute ; rm $linkcute
+	sudo jar xf $linkcute ; rm $linkcute
 	cd ..
 	echo "Copy file vao addon.img"
 	sudo cp -rf custom/* working
@@ -40,7 +40,7 @@ if [[ -f $linkcute ]]; then
 	permis working
 	sudo umount working
 	sudo rm -rf working custom
-	resize2fs -f -M addon.img 
+	sudo resize2fs -f -M addon.img 
 	echo "Xong, hay copy file addon.img vao module/update"
 fi
 
