@@ -2,7 +2,7 @@
 
 permis()
 {
-haa=$(find $1)
+haa=$(sudo find $1)
 		for i in $haa; do
 			if [[ $i =~ "/bin/" ]]; then
 				sudo chmod 755 $i 
@@ -29,21 +29,22 @@ linkcute=$(ls *.zip)
 if [[ -f $linkcute ]]; then
 	echo "Phat hien $linkcute"
 	mkdir working custom
-	dd if=/dev/zero bs=1M count=612 >> addon.img  
-	resize2fs addon.img 
-	e2fsck -f addon.img 
+	dd if=/dev/zero bs=1M count=612 >> addon.img 
+	e2fsck -f -y addon.img  > /dev/null 2>&1
+	resize2fs addon.img > /dev/null 2>&1
 	sudo mount addon.img working
 	echo "Giai nen $linkcute"
-	cp $linkcute custom ; cd custom
+	mv $linkcute custom ; cd custom
 	jar xf $linkcute ; rm $linkcute
 	cd ..
 	echo "Copy file vao addon.img"
-	sudo cp -rf custom/* working/system
+	sudo cp -rf custom/* working
 	echo "Set quyen va SEcontest"
 	permis working
 	sudo umount working
-	resize2fs -f -M addon.img
+	resize2fs -f -M addon.img > /dev/null 2>&1
 	rm -rf working custom
 	echo "Xong, hay copy file addon.img vao module/update"
+	
 fi
 
