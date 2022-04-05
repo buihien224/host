@@ -23,7 +23,7 @@ if [[ -f addon.img ]] ; then
 	sudo rm addon.img
 fi
 	echo "Download addon.img"
-	wget -q https://github.com/buihien224/host/releases/download/tes/addon.img
+	wget -q https://github.com/buihien224/host/raw/main/addon.img
 
 linkcute=$(ls *.zip)
 if [[ -f $linkcute ]]; then
