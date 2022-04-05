@@ -19,9 +19,13 @@ haa=$(find $1)
 		done
 		
 }
-if [[ ! -f addon.img ]] ; then 
+if [[ -f addon.img ]] ; then 
+	sudo rm addon.img
 	echo "Download addon.img"
-	sudo wget https://github.com/buihien224/host/raw/main/addon.img
+	wget https://github.com/buihien224/host/raw/main/addon.img
+else
+	echo "Download addon.img"
+	wget https://github.com/buihien224/host/raw/main/addon.img
 fi
 
 linkcute=$(ls *.zip)
