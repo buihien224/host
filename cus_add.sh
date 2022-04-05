@@ -45,6 +45,7 @@ if [[ -f $linkcute ]]; then
 	sh=$(ls *.sh)
 	chmod +x $sh
 	./$sh 
+	cd ..
 	sudo umount working
 	resize2fs -f -M addon.img > /dev/null 2>&1
 	rm -rf working custom
