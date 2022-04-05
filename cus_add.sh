@@ -32,7 +32,7 @@ linkcute=$(ls *.zip)
 if [[ -f $linkcute ]]; then
 	echo "Phat hien $linkcute"
 	mkdir working custom
-	sudo dd if=/dev/zero bs=1M count=256 >> addon.img
+	dd if=/dev/zero bs=1M count=256 >> addon.img
 	sudo mount addon.img working
 	echo "Giai nen $linkcute"
 	cp $linkcute custom ; cd custom
