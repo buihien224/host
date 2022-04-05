@@ -40,7 +40,6 @@ if [[ -f $linkcute ]]; then
 	permis working
 	sudo umount working
 	rm -rf working custom
-	resize2fs -f -M addon.img 
 	echo "Xong, hay copy file addon.img vao module/update"
 fi
 
