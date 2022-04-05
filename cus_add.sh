@@ -41,6 +41,9 @@ if [[ -f $linkcute ]]; then
 	sudo cp -rf custom/* working
 	echo "Set quyen va SEcontest"
 	permis working
+	echo "Chay file sh tuy chinh"
+	sh=$(ls *.sh)
+	./$sh 
 	sudo umount working
 	resize2fs -f -M addon.img > /dev/null 2>&1
 	rm -rf working custom
