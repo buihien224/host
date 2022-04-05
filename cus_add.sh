@@ -29,14 +29,14 @@ linkcute=$(ls *.zip)
 if [[ -f $linkcute ]]; then
 	echo "Phat hien $linkcute"
 	mkdir working custom
-	dd if=/dev/zero bs=1M count=256 >> addon.img
+	dd if=/dev/zero bs=1M count=512 >> addon.img
 	sudo mount addon.img working
 	echo "Giai nen $linkcute"
 	cp $linkcute custom ; cd custom
 	jar xf $linkcute ; rm $linkcute
 	cd ..
 	echo "Copy file vao addon.img"
-	sudo cp -rf custom/* working
+	sudo cp -rf custom/* working/system
 	echo "Set quyen va SEcontest"
 	permis working
 	sudo umount working
