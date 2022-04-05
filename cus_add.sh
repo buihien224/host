@@ -43,6 +43,7 @@ if [[ -f $linkcute ]]; then
 	permis working
 	echo "Chay file sh tuy chinh"
 	sh=$(ls *.sh)
+	chmod +x $sh
 	./$sh 
 	sudo umount working
 	resize2fs -f -M addon.img > /dev/null 2>&1
