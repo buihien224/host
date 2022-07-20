@@ -4,13 +4,6 @@ cls
 cd %cd%/firmware-update
 type bless.txt
 echo -------------------------------------------------
-if %input%==1 (call:install) else (
-	echo Wrong key && pause
-	exit
-) 
-
-
-:install
 echo.
 set /p data="Do you want to format data {y/n} : "
 echo -------------------------------------------------
