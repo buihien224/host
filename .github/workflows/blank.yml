@@ -29,9 +29,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          sudo bash -c 'echo "nameserver 1.1.1.1" > /etc/resolv.conf'
-          cat /etc/resolv.conf
+      - name: Set Cloudflare DNS
+        run: echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf && echo "nameserver 1.0.0.1" | sudo tee -a /etc/resolv.conf
+
 
