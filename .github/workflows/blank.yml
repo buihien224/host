@@ -30,6 +30,7 @@ jobs:
         run: echo Hello, world!
 
       - name: Set Cloudflare DNS
-        run: echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf && echo "nameserver 1.0.0.1" | sudo tee -a /etc/resolv.conf
+        run: echo ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
 
 
