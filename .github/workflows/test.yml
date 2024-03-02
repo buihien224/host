@@ -1,0 +1,19 @@
+name: Get Last Commit Name
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  get_commit_name:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Get last commit name
+      run: |
+        COMMIT_NAME=$(git log -1 --pretty=format:"%s")
+        echo "Last commit name: $COMMIT_NAME"
